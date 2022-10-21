@@ -1,0 +1,23 @@
+{
+  "attributes": [
+    {
+      "trait_type": "Collection",
+      "value": "Bob Special"
+    },
+    {
+      "trait_type": "Event",
+      "value": "PHP Community Summit"
+    },
+    {
+      "trait_type": "Language",
+      "value": "PHP"
+    },
+    {
+      "trait_type": "Country",
+      "value": "Brazil"
+    }
+  ],
+  "description": "A gold elephant rare coin",
+  "image": "ipfs://QmULN5tZLXFBKySPhXYGDJc3QLeKJGMgaHNoyob34aj9F2",
+  "name": "Elephant Coin"
+}

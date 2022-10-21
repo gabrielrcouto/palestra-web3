@@ -1,0 +1,6 @@
+{
+    "require": {
+        "web3p/web3.php": "^0.1.6",
+        "rootsoft/laravel-ipfs": "^0.0.1"
+    }
+}
