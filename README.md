@@ -18,7 +18,12 @@
 
 ```sh
 cd jamstack
+vendor/bin/jigsaw init
+vendor/bin/jigsaw build
+vendor/bin/jigsaw serve
+
 ipfs add -r build_local/
+ipfs pin add PUT_IPFS_HASH_FOLDER_HERE
 ipfs name publish PUT_IPFS_HASH_FOLDER_HERE
 ipfs ls /ipns/PUT_IPNS_HASH_HERE
 ```

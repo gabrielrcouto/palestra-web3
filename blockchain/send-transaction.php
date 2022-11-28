@@ -38,7 +38,7 @@ $eth->accounts(function ($err, $accounts) use ($eth) {
     $eth->sendTransaction([
         'from' => $fromAccount,
         'to' => $toAccount,
-        'value' => '0x11'
+        'value' => 1000000000000000000
     ], function ($err, $transaction) use ($eth, $fromAccount, $toAccount) {
         if ($err !== null) {
             echo 'Error: ' . $err->getMessage();

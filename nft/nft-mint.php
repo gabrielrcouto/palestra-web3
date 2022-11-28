@@ -10,9 +10,9 @@ $web3 = new Web3('http://127.0.0.1:7545/');
 
 $eth = $web3->eth;
 
-$contractAddress = '0x9A60A58393243c77FFcc42d84Fa8775217332D8C';
+$contractAddress = '0x8BF0c0F8dA9d046E3F1E63657E0f5bd47fBE384D';
 $contract = new Contract($web3->provider, file_get_contents('abi.json'));
-$nftMetadataURI = 'ipfs://some-hash-2';
+$nftMetadataURI = 'ipfs://something-2';
 
 $eth->accounts(function ($err, $accounts) use ($eth, $contract, $contractAddress, $nftMetadataURI) {
     if ($err !== null) {
@@ -21,6 +21,8 @@ $eth->accounts(function ($err, $accounts) use ($eth, $contract, $contractAddress
     }
     $fromAccount = $accounts[0];
     $toNFT = $accounts[0];
+
+    var_dump($fromAccount);
 
     $contract->at($contractAddress)->send('mintNFT', $toNFT, $nftMetadataURI, [
         'from' => $fromAccount,
@@ -31,14 +33,5 @@ $eth->accounts(function ($err, $accounts) use ($eth, $contract, $contractAddress
         }
 
         echo 'Minted NFT. Transaction ID ' . $transactionId . PHP_EOL;
-
-        $contract->eth->getTransactionReceipt($transactionId, function ($err, $transaction) {
-            if ($err !== null) {
-                throw $err;
-            }
-            if ($transaction) {
-                echo 'NFT ID: ' . NumberFormatter::format($transaction->logs[0]->topics[3]) . PHP_EOL;
-            }
-        });
     });
 });

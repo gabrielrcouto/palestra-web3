@@ -9,9 +9,9 @@ $web3 = new Web3('http://127.0.0.1:7545/');
 
 $eth = $web3->eth;
 
-$contractAddress = '0x9A60A58393243c77FFcc42d84Fa8775217332D8C';
+$contractAddress = '0x8BF0c0F8dA9d046E3F1E63657E0f5bd47fBE384D';
 $contract = new Contract($web3->provider, file_get_contents('abi.json'));
-$nftId = 8;
+$nftId = 2;
 
 $eth->accounts(function ($err, $accounts) use ($eth, $contract, $contractAddress, $nftId) {
     if ($err !== null) {
